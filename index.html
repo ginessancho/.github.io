@@ -1,62 +1,62 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Olympic Planners (A Wedding in Paris)</title>
-    <style>
-        body, html {
-            margin: 0;
-            padding: 0;
-            scroll-behavior: smooth;
-        }
-        section {
-            min-height: 100vh; /* Change from height to min-height */
-            display: flex;
-            flex-direction: column; /* Added to keep content vertically centered */
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            font-family: Arial, sans-serif;
-            padding: 20px; /* Add padding inside each section */
-        }
-
-        #home {
-            background-color: #f8f9fa;
-        }
-        #our-story {
-            background-color: #e9ecef;
-        }
-        #event-details {
-            background-color: #dee2e6;
-        }
-        #what-we-need {
-            background-color: #ced4da;
-        }
-        #what-we-need {
-            background-color: #c4cad0;
-        }
-        #rsvp {
-            background-color: #a5adb5;
-        }
-        .rsvp-button {
-            display: inline-block;
-            background-color: #4CAF50; /* Example button color */
-            color: white;
-            padding: 10px 20px;
-            text-align: center;
-            text-decoration: none;
-            font-size: 16px;
-            margin: 4px 2px;
-            cursor: pointer;
-            border-radius: 12px;
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Olympic Planners (A Wedding in Paris)</title>
+        <style>
+            body, html {
+                margin: 0;
+                padding: 0;
+                scroll-behavior: smooth;
             }
-
-        .content {
-            padding: 20px;
-        }
-    </style>
-</head>
+            section {
+                min-height: 100vh; /* Change from height to min-height */
+                display: flex;
+                flex-direction: column; /* Added to keep content vertically centered */
+                justify-content: center;
+                align-items: center;
+                text-align: center;
+                font-family: Arial, sans-serif;
+                padding: 20px; /* Add padding inside each section */
+            }
+            img {
+                max-width: 100%; /* Ensure images are not wider than the screen */
+                height: auto; /* Maintain aspect ratio */
+            }
+            .rsvp-button {
+                display: inline-block;
+                background-color: #4CAF50; /* Example button color */
+                color: white;
+                padding: 10px 20px;
+                text-align: center;
+                text-decoration: none;
+                font-size: 16px;
+                margin: 4px 2px;
+                cursor: pointer;
+                border-radius: 12px;
+            }
+            .content {
+                padding: 20px;
+                max-width: 800px; /* Max width for the content */
+                margin: auto; /* Center content */
+            }
+    
+            /* Responsive adjustments */
+            @media (max-width: 600px) {
+                .content {
+                    padding: 10px;
+                }
+                h1, h2 {
+                    font-size: 1.5em; /* Smaller headers on small screens */
+                }
+                .rsvp-button {
+                    font-size: 14px;
+                    padding: 8px 15px;
+                }
+            }
+        </style>
+    </head>
 <body>
 
     <section id="home">
