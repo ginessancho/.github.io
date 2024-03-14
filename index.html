@@ -55,6 +55,24 @@
                     padding: 8px 15px;
                 }
             }
+            #home {
+                background-color: #f8f9fa;
+            }
+            #our-story {
+                background-color: #e9ecef;
+            }
+            #event-details {
+                background-color: #dee2e6;
+            }
+            #what-we-need {
+                background-color: #ced4da;
+            }
+            #etiquette {
+                background-color: #c4cad0; /* Adjusted duplicate ID */
+            }
+            #rsvp {
+                background-color: #adb5bd;
+            }
         </style>
     </head>
 <body>
@@ -80,7 +98,9 @@
         <div class="content">
             <h2>¡Que comiencen los juegos!</h2>
             <img src="photos/Kinue-Hitomi-in-the-100-meter-heat-at-the-Amsterdam-Olympics-1928.-Japanese-Olympic-Committee.-lut-scaled-768x461.jpg" alt="Kinue Hitomi in the 100-meter heat at the Amsterdam Olympics, 1928">
-            <p>If you have been able to plan a trip (unlike us) in less than 3 months to Paris, we would be extremely happy to have you on a classic Parisian Saturday in the 14th arrondissement.</p>
+            <p> 🇵🇦 Si has podido planificar un viaje (a diferencia de nosotros) en menos de 3 meses, estaremos encantados de tenerte para una boda parisina clásica.</p>
+            <p> 🇫🇷 Si vous avez pu planifier un voyage (contrairement à nous) en moins de 3 mois, nous serions extrêmement heureux de vous accueillir pour un Mariage parisien classique.</p>
+            <p> 🇺🇸 If you have been able to plan a trip (unlike us) in less than 3 months, we would be extremely happy to have you for a classic Parisian Wedding.</p>
         </div>
     </section>
 
@@ -132,8 +152,24 @@
             <img src="photos/Van_Eyck_-_Arnolfini_Portrait.jpg" alt="Van Eyck">
         </div>
     </section>
+
+    <script>
+        // Ask for the password
+        var password = prompt("Please enter the password given to you by the planners or look it up in the source code:", "");
     
-<script>
+        // Check the password
+        if(password === "menudolio") {
+            // Correct password: Show the content and apply optional styles
+            document.body.style.display = "block";
+        } else {
+            // Incorrect password: Hide the content and alert the user
+            document.body.innerHTML = "";
+            alert("Incorrect password. You cannot access this page.");
+            window.location = "about:blank"; // Optionally redirect to another page
+        }
+    </script>
+
+    <script>
     function updateCountdown() {
         const countdownElement = document.getElementById('countdown');
         const weddingDate = new Date('June 29, 2024 15:00:00').getTime();
@@ -155,6 +191,6 @@
     updateCountdown();
     const x = setInterval(updateCountdown, 60000);
     </script>
-    
+
 </body>
 </html>
