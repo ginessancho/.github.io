@@ -41,7 +41,13 @@
                 max-width: 800px; /* Max width for the content */
                 margin: auto; /* Center content */
             }
-    
+            .no-bullets {
+                list-style-type: none; /* Removes the default bullet points */
+            }
+
+            .align-left {
+                text-align: left; /* Aligns the text to the left */
+            }
             /* Responsive adjustments */
             @media (max-width: 600px) {
                 .content {
@@ -55,13 +61,27 @@
                     padding: 8px 15px;
                 }
             }
+            figcaption {
+                color: gray; /* Sets the caption text color to gray */
+                font-size: 0.8em; /* Optionally makes the caption text slightly smaller than the body text */
+            }
         </style>
     </head>
 <body>
 
+    <div style="position: fixed; top: 0; width: 100%; background: #d6d6d6; padding: 10px; text-align: center; z-index: 1000;">
+        <select id="languageSelect" onchange="switchLanguage(this.value)">
+            <option value="en">English</option>
+            <option value="es">Español</option>
+            <option value="fr">Français</option>
+        </select>
+    </div>
+
     <section id="home">
         <div class="content">
-            <h1>The Olympic Planners</h1>
+            <h1 data-es="Planificando a Ritmo Olímpico"
+             data-fr= "Un Mariage à la Vitesse Olympique"
+             data-en= "The Olympic Planners"></h1>
             <div class="olympic-logo">
                 <svg xmlns="http://www.w3.org/2000/svg" width="180" height="120" viewBox="0 0 180 120">
                     <g fill="none" stroke-width="10" transform="translate(10 40)">
@@ -78,103 +98,222 @@
 
     <section id="our-story">
         <div class="content">
-            <h2>¡Que comience la Boda!</h2>
-            <img src="photos/Kinue-Hitomi-in-the-100-meter-heat-at-the-Amsterdam-Olympics-1928.-Japanese-Olympic-Committee.-lut-scaled-768x461.jpg" alt="Kinue Hitomi in the 100-meter heat at the Amsterdam Olympics, 1928">
-            <p> 🇵🇦 Si alguna vez has podido planificar un viaje (a diferencia de nosotros) en menos de 3 meses, estaremos encantados de tenerte en nuestra boda parisina. </p>
-            <p> 🇫🇷 Si vous avez pu planifier un voyage (contrairement à nous) en moins de 3 mois, nous serions extrêmement heureux de vous accueillir à notre mariage parisien.</p>
-            <p> 🇺🇸 If you have been able to plan a trip (unlike us) in less than 3 months, we would be extremely happy to have you at our Parisian wedding.</p>
+            <h2 data-es="¡Que comience la Boda!"
+             data-fr= "Que le mariage commence!"
+             data-en= "Let the Wedding begin!"></h2>
+             <figure>
+                <img src="photos/Kinue-Hitomi-in-the-100-meter-heat-at-the-Amsterdam-Olympics-1928.-Japanese-Olympic-Committee.-lut-scaled-768x461.jpg" alt="Kinue Hitomi in the 100-meter heat at the Amsterdam Olympics, 1928">
+                <figcaption data-en="Kinue Hitomi in the 100-meter heat at the Amsterdam Olympics, 1928."
+                 data-es="Kinue Hitomi en la carrera de 100 metros en las Olimpiadas de Ámsterdam, 1928."
+                 data-fr="Kinue Hitomi dans la course de 100 mètres aux Jeux Olympiques d'Amsterdam, 1928."></figcaption>
+            </figure>
+            <p data-en="If you've ever managed the feat of planning a trip to Paris in less than three months (a feat that surpasses us), your presence at our Parisian wedding will be all the more meaningful."
+           data-es="Si alguna vez has logrado la proeza de planificar un viaje a Paris en menos de tres meses (todo un logro que nos supera), tu presencia en nuestra boda parisina será aún más significativa."
+           data-fr="Si vous avez déjà réussi l'exploit de planifier un voyage à Paris en moins de trois mois (un exploit qui nous dépasse), votre présence à notre mariage parisien sera d'autant plus significative."></p>
         </div>
     </section>
 
     <section id="event-details">
         <div class="content">
-            <h2>Event Details</h2>
-            <img src="photos/napoleon-et-josephine-couple-imperial.jpg" alt="Napoleon and Josephine, an imperial couple">
-            <p>Fecha / Date / Date of the wedding: June 29, at 15:00 (must arrive 10 minutes early).</p>
+            <h2 data-es="Detalles"
+             data-fr= "Détails"
+             data-en= "Details"></h2>
+             <p
+            data-es="<strong>Fecha de la ceremonia:</strong> 29 de junio, a las 15:00 (es necesario llegar 10 minutos antes)"
+            data-fr="<strong>Date de la cérémonie:</strong> 29 juin, à 15:00 (doit arriver 10 minutes à l'avance)"
+            data-en="<strong>Date of the ceremony:</strong> June 29, at 15:00 (must arrive 10 minutes early)"></p>
             <p id="countdown"></p>
-            <p>Lugar de la Ceremonia / Lieu de la cérémonie / Wedding Ceremony at the Mairie of the 14th Arrondissement: <button onclick="window.open('https://www.google.com/maps/place/Mairie+du+14e+arrondissement+de+Paris/@48.8331048,2.3243141,17z/data=!3m1!4b1!4m6!3m5!1s0x47e671b6c1d0b675:0x58e4349e9d8792ed!8m2!3d48.8331048!4d2.326889!16s%2Fg%2F120hnnbl?entry=ttu');" >Open in Google Maps</button></p> 
-            <p>Detalles de la Fiesta (Por Definir)/ Détails de la fête (à définir) / Party Details (to be defined) / </p>
-            <p>Our Newly Wed's Flat (in case you want to hang around): <button onclick="window.open('https://www.google.com/maps/place/8+Rue+de+Montmorency,+92100+Boulogne-Billancourt/@48.8458567,2.2330636,18z/data=!3m1!4b1!4m6!3m5!1s0x47e67ad8ff55a041:0x96941378b45288ae!8m2!3d48.8458567!4d2.2337996!16s%2Fg%2F11g6nkhb2h?entry=ttu');">Open in Google Maps</button></p>
+            <p
+             data-es="Lugar: Ayuntamiento del distrito 14"
+             data-en="Place: Town Hall of the 14th Arrondissement"
+             data-fr="Lieu: Mairie du 14ème Arrondissement"></p> <button onclick="window.open('https://www.google.com/maps/place/Mairie+du+14e+arrondissement+de+Paris/@48.8331048,2.3243141,17z/data=!3m1!4b1!4m6!3m5!1s0x47e671b6c1d0b675:0x58e4349e9d8792ed!8m2!3d48.8331048!4d2.326889!16s%2Fg%2F120hnnbl?entry=ttu');" data-en="Open in Google Maps" data-es="Abrir en Google Maps" data-fr="Ouvrir dans Google Maps">Google Maps</button></p>
+             
+
+            <figure>
+                <img id="imageNapoleon" src="photos/napoleon-et-josephine-couple-imperial.jpg" alt="Napoleon and Josephine, an imperial couple">
+                <figcaption id="captionNapoleon" data-en="Napoleon and Josephine, an imperial couple"
+                     data-es="Napoleón y Josefina, una pareja imperial"
+                     data-fr="Napoléon et Joséphine, un couple impérial"></figcaption>
+            </figure>
+            <p data-en="After the ceremony, we will host a cocktail party (location pending)" 
+            data-es="Después de la ceremonia, organizaremos una fiesta cóctel (ubicación pendiente)" 
+            data-fr="Après la cérémonie, nous organiserons cocktail (lieu à venir)"></p>
+            <p data-en="On the day following the ceremony, we are pleased to host a brunch near the Bois de Boulogne, exclusively for our guests visiting from outside Paris."
+            data-es="Al día siguiente de la ceremonia, nos complace ofrecer un brunch cerca del Bois de Boulogne, exclusivamente para nuestros invitados que vienen de fuera de París."
+            data-fr="Le lendemain de la cérémonie, nous avons le plaisir d'organiser un brunch près du Bois de Boulogne, exclusivement pour nos invités venant de l'extérieur de Paris."></p>
+            <p data-en="We will leave early on Monday July 1st to our honeymoon in Auvergne." 
+            data-es="Saldremos temprano el lunes 1 de julio hacia nuestra luna de miel en Auvergne." 
+            data-fr="Nous partirons tôt lundi 1er juillet pour notre lune de miel en Auvergne."></p>
+            <p data-en="Location of our newlyweds flat, in case you want to be close to us during your stay:" 
+            data-es="Ubicación de nuestro piso de recién casados, por si queréis estar cerca de nosotros durante vuestra estancia:" 
+            data-fr="Localisation de notre appartement pour jeunes mariés, au cas où vous souhaiteriez être proche de nous pendant votre séjour:"></p>
+            <p><button onclick="window.open('https://www.google.com/maps/place/8+Rue+de+Montmorency,+92100+Boulogne-Billancourt/@48.8458567,2.2330636,18z/data=!3m1!4b1!4m6!3m5!1s0x47e67ad8ff55a041:0x96941378b45288ae!8m2!3d48.8458567!4d2.2337996!16s%2Fg%2F11g6nkhb2h?entry=ttu');" data-en="Open in Google Maps" data-es="Abrir en Google Maps" data-fr="Ouvrir dans Google Maps">Google Maps</button></p>
+
         </div>
     </section>
     
 
     <section id="what-we-need">
         <div class="content">
-            <h2> 🇵🇦 ¿Qué necesitamos de tí?</h2>
-            <h2> 🇫🇷 Qu'avons nous besoin de vous?</h2>
-            <h2> 🇺🇸 What do we need from you?</h2>
-            <ul style="text-align: left;">
-                <p> 🇵🇦 Besos y abrazos. Que te tomes buenas fotos donde estemos bien guapos los dos (misión imposible).</p>
-                <p> 🇫🇷 Câlins et bisous. Que tu fasses de belles photos où nous sommes tous les deux beaux (mission impossible). </p>
-                <p> 🇺🇸 Hugs and kisses. That you take good pictures where we both are good looking (mission impossible).</p>
-            </ul>
-            <img src="photos/d7hftxdivxxvm.cloudfront.net.webp" alt="Memorable Moment">
+            <h2 data-en="What do we need from you?" data-es="¿Qué necesitamos de ti?" data-fr="Qu'avons-nous besoin de vous?"></h2>
+            <p data-en="Hugs and kisses. That you take good pictures where we both look great (mission impossible)."
+            data-es="Besos y abrazos. Que te tomes buenas fotos donde estemos bien guapos los dos (misión imposible)."
+            data-fr="Câlins et bisous. Que tu fasses de belles photos où nous sommes tous les deux beaux (mission impossible)."></p>
+            <figure>
+                <img src="photos/d7hftxdivxxvm.cloudfront.net.webp" alt="incredible feats of strength, speed, and general physiques, captured by photographer David Burnett">
+                <figcaption id="captionStrengthSpeed" 
+                    data-en="Incredible feats of strength, speed, and general physiques, captured by photographer David Burnett" 
+                    data-es="Increíbles proezas de fuerza, velocidad y físicos generales, capturados por el fotógrafo David Burnett" 
+                    data-fr="Des exploits incroyables de force, de vitesse et de physiques généraux, capturés par le photographe David Burnett"></figcaption>
+            </figure>
         </div>
     </section>
     
     <section id="etiquette">
         <div class="content">
             <h2>Etiquette</h2>
-            <ul style="text-align: left;">
-                <p> Formal / Hippie / Casual / Artista / Fallero / Carnavalero</p>
-            </ul>
-            <img src="photos/40b3778b6295475cbb7e43504d807471.jpeg" alt="Dress Code Inspiration">
+            <!-- English Content -->
+            <div class="etiquette-content" data-lang="en" style="display: none;">
+                <p>Feel free to mix elements, innovate, or even create a category of your own.</p>
+                <figure>
+                    <img src="photos/40b3778b6295475cbb7e43504d807471.jpeg" alt="Dress Code Inspiration">
+                    <figcaption>The Couple</figcaption>
+                </figure>
+                <ul class="no-bullets align-left">
+                    <li><strong>Formal:</strong> Elegant attire that speaks of timeless sophistication.</li>
+                    <li><strong>Hippie:</strong> Embrace the freedom and romanticism of the '60s and '70s.</li>
+                    <li><strong>Casual:</strong> Comfortable yet tasteful, perfect for a relaxed gathering.</li>
+                    <li><strong>Artista:</strong> Let your attire be your canvas – bold, colorful, and expressive.</li>
+                    <li><strong>Fallero:</strong> Inspired by Valencia's traditional costumes, embody the festivity and cultural richness.</li>
+                    <li><strong>Carnavalero:</strong> Capture the exuberance of carnival with vibrant colors and festive accessories.</li>
+                </ul>
+            </div>
+            <!-- Spanish Content -->
+            <div class="etiquette-content" data-lang="es" style="display: none;">
+                <p>Siente la libertad de mezclar elementos, innovar o incluso crear una categoría propia.</p>
+                <figure>
+                    <img src="photos/40b3778b6295475cbb7e43504d807471.jpeg" alt="Inspiración para el código de vestimenta">
+                    <figcaption>Los novios</figcaption>
+                </figure>
+                <ul class="no-bullets align-left">
+                    <li><strong>Formal:</strong> Atuendo elegante que habla de sofisticación atemporal.</li>
+                    <li><strong>Hippie:</strong> Abraza la libertad y el romanticismo de los años '60 y '70.</li>
+                    <li><strong>Casual:</strong> Cómodo pero de buen gusto, perfecto para una reunión relajada.</li>
+                    <li><strong>Artista:</strong> Deja que tu atuendo sea tu lienzo: audaz, colorido y expresivo.</li>
+                    <li><strong>Fallero:</strong> Inspirado en los trajes tradicionales de Valencia, encarna la festividad y la riqueza cultural.</li>
+                    <li><strong>Carnavalero:</strong> Captura la exuberancia del carnaval con colores vibrantes y accesorios festivos.</li>
+                </ul>
+            </div>
+            <!-- French Content -->
+            <div class="etiquette-content" data-lang="fr" style="display: none;">
+                <p>N'hésitez pas à mélanger les éléments, à innover, ou même à créer une catégorie qui vous est propre.</p>
+                <figure>
+                    <img src="photos/40b3778b6295475cbb7e43504d807471.jpeg" alt="Inspiration pour le code vestimentaire">
+                    <figcaption>les fiancés</figcaption>
+                </figure>
+                <ul class="no-bullets align-left">
+                    <li><strong>Formel:</strong> Tenue élégante qui parle de sophistication intemporelle.</li>
+                    <li><strong>Hippie:</strong> Embrassez la liberté et le romantisme des années '60 et '70.</li>
+                    <li><strong>Décontracté:</strong> Confortable mais de bon goût, parfait pour une réunion détendue.</li>
+                    <li><strong>Artiste:</strong> Laissez votre tenue être votre toile – audacieuse, colorée et expressive.</li>
+                    <li><strong>Fallero:</strong> Inspiré par les costumes traditionnels de Valence, incarnez la festivité et la richesse culturelle.</li>
+                    <li><strong>Carnavalero:</strong> Capturez l'exubérance du carnaval avec des couleurs vives et des accessoires festifs.</li>
+                </ul>
+            </div>
         </div>
     </section>
+    
     
 
     <section id="rsvp">
         <div class="content">
-            <h2>RSVP</h2>
-            <ul style="text-align: left;">
-            <p> 🇵🇦 Si puedes unirte por favor completa el siguiente formulario.</p>
-            <p> 🇫🇷 N'hésitez pas à nous faire savoir si vous pouvez nous rejoindre en remplissant le formulaire ci-dessous.</p>
-            <p> 🇺🇸 Please let us know if you can join us by filling out the form below.</p>
+            <h2 data-en="RSVP" data-es="Confirmación de Asistencia" data-fr="Répondez S'il Vous Plaît"></h2>
+            <p data-en="Please let us know if you can join us by filling out the form below."
+            data-es="Por favor completa el siguiente formulario para dejarnos saber si podrás venir."
+            data-fr="N'hésitez pas à nous faire savoir si vous pouvez nous rejoindre en remplissant le formulaire ci-dessous."></p>
             </ul>
-            <a href="https://forms.gle/MG1jH1UAEH6poyZ19" target="_blank" class="rsvp-button">RSVP Here</a>
+            <a href="https://forms.gle/MG1jH1UAEH6poyZ19" target="_blank" class="rsvp-button">Google Forms</a>
             <p></p>
-            <img src="photos/c1329750-d313-4821-8d68-e0963f4db79c.png" alt="AIFrenchus">
+            <figure>
+                <img src="photos/c1329750-d313-4821-8d68-e0963f4db79c.png" alt="AIFrenchus">
+                <figcaption id="AIFrenchus" 
+                    data-en="The Honeymoon" 
+                    data-es="La luna de miel" 
+                    data-fr="La lune de miel"></figcaption>
+            </figure>
         </div>
     </section>
 
     <script>
-        // Ask for the password
-        var password = prompt("Please enter the password given to you by the planners or look it up in the source code:", "");
-    
-        // Check the password
-        if(password === "menudolio") {
-            // Correct password: Show the content and apply optional styles
-            document.body.style.display = "block";
-        } else {
-            // Incorrect password: Hide the content and alert the user
-            document.body.innerHTML = "";
-            alert("Incorrect password. You cannot access this page.");
-            window.location = "about:blank"; // Optionally redirect to another page
+        function switchLanguage(lang) {
+            // First, update all elements with language-specific data attributes
+            document.querySelectorAll('[data-en], [data-es], [data-fr]').forEach(element => {
+                if (element.hasAttribute(`data-${lang}`)) {
+                    element.innerText = element.getAttribute(`data-${lang}`);
+                }
+            });
+
+            // Show or hide elements based on language (for sections that might be hidden/shown based on language)
+            document.querySelectorAll('.etiquette-content, .other-class-for-language-specific-content').forEach(content => {
+                if (content.getAttribute('data-lang') === lang) {
+                    content.style.display = 'block';
+                } else {
+                    content.style.display = 'none';
+                }
+            });
+
+            // For elements like your <p> tag with embedded HTML in data-* attributes
+            document.querySelectorAll('[data-' + lang + ']').forEach(element => {
+                element.innerHTML = element.getAttribute('data-' + lang); // Use innerHTML instead of innerText
+            });
+
+            // Update the language selector to match the current language
+            document.getElementById('languageSelect').value = lang;
         }
+
+        // Prompt for password and set default language
+        document.addEventListener('DOMContentLoaded', function() {
+            var password = prompt("Please enter the password:", "");
+            if (password === "menudolio") {
+                document.body.style.display = "block";
+                // Initialize page with English language
+                switchLanguage('en');
+            } else {
+                document.body.innerHTML = "";
+                alert("Incorrect password. You cannot access this page.");
+                window.location.href = "about:blank";
+            }
+        });
     </script>
 
     <script>
-    function updateCountdown() {
-        const countdownElement = document.getElementById('countdown');
-        const weddingDate = new Date('June 29, 2024 15:00:00').getTime();
-        const now = new Date().getTime();
-        const distance = weddingDate - now;
-        
-        const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-        const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-        
-        countdownElement.innerHTML = "Time until the event: " + days + "d " + hours + "h " + minutes + "m ";
-        
-        if (distance < 0) {
-            clearInterval(x);
-            countdownElement.innerHTML = "The event has started!";
+        function updateCountdown() {
+            const countdownElement = document.getElementById('countdown');
+            const weddingDate = new Date('June 29, 2024 15:00:00').getTime();
+            const now = new Date().getTime();
+            const distance = weddingDate - now;
+
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+
+            const countdownText = {
+                en: "Countdown",
+                es: "Cuenta regresiva",
+                fr: "Compte à rebours"
+            };
+
+            countdownElement.innerHTML = `${countdownText[currentLang]}: ${days}d ${hours}h ${minutes}m`;
+
+            if (distance < 0) {
+                clearInterval(x);
+                countdownElement.innerHTML = (currentLang === 'en' ? "The event has started!" : currentLang === 'es' ? "¡El evento ha comenzado!" : "L'événement a commencé !");
+            }
         }
-    }
-    
-    updateCountdown();
-    const x = setInterval(updateCountdown, 60000);
+
+        // Update the countdown every minute and on initial load
+        updateCountdown();
+        const x = setInterval(updateCountdown, 60000);
     </script>
 
 </body>
