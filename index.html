@@ -24,7 +24,7 @@
                 max-width: 100%; /* Ensure images are not wider than the screen */
                 height: auto; /* Maintain aspect ratio */
             }
-            .rsvp-button {
+            .rsvp-button, .button-cagnotte {
                 display: inline-block;
                 background-color: #4CAF50; /* Example button color */
                 color: white;
@@ -56,7 +56,7 @@
                 h1, h2 {
                     font-size: 1.5em; /* Smaller headers on small screens */
                 }
-                .rsvp-button {
+                .rsvp-button, .button-cagnotte {
                     font-size: 14px;
                     padding: 8px 15px;
                 }
@@ -239,12 +239,13 @@
     <section id="rsvp">
         <div class="content">
             <h2 data-en="RSVP" data-es="Confirmación de Asistencia" data-fr="Répondez s'il vous plaît"></h2>
-            <p data-en="Please let us know if you can join us by filling out the google form below:"
-            data-es="Por favor completa el siguiente formulario de google para dejarnos saber si podrás venir:"
-            data-fr="Veuillez remplir le formulaire Google suivant pour nous faire savoir si vous pouvez venir:"></p>
-            </ul>
-            <a href="https://forms.gle/MG1jH1UAEH6poyZ19" target="_blank" class="rsvp-button">Google Forms</a>
-            <p></p>
+            <p data-en="The RSVP is now closed. Thank you for your responses!"
+            data-es="La confirmación de asistencia ya está cerrada. ¡Gracias por sus respuestas!"
+            data-fr="La réponse est maintenant fermée. Merci pour vos réponses!"></p>
+            <p data-en="Instead, you can contribute to our honeymoon fund by clicking the button below:"
+            data-es="En su lugar, pueden contribuir a nuestro fondo de luna de miel haciendo clic en el botón de abajo:"
+            data-fr="Vous pouvez plutôt contribuer à notre fonds de lune de miel en cliquant sur le bouton ci-dessous:"></p>
+            <a href="/cagnotte.html" target="_blank" class="button-cagnotte" data-en="Contribute to Family Trip Fund" data-es="Contribuir al Fondo para el Viaje Familiar" data-fr="Contribuer au Fonds pour le Voyage en Famille">Contribute to Family Trip Fund</a>
             <figure>
                 <img src="photos/c1329750-d313-4821-8d68-e0963f4db79c.png" alt="AIFrenchus">
                 <figcaption id="AIFrenchus" 

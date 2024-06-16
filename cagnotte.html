@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-en="Contribute to Our Family Trip Fund" data-es="Contribuir al Fondo para el Viaje Familiar" data-fr="Contribuer au Fonds pour le Voyage en Famille">Contribute to Our Family Trip Fund</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            text-align: center;
+        }
+        .container {
+            max-width: 800px;
+            margin: auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            color: #4CAF50;
+        }
+        p {
+            font-size: 1.2em;
+        }
+        .donate-button {
+            display: inline-block;
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+            border-radius: 12px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>¡Larga vida a los Sánchez!</h1>
+        <p>Si insistes en regalarnos un objeto físico, ¡por favor no lo hagas! ;-) Delia es minimalista y Ginés ya tiene muchos chécheres. Te proponemos participar en el primer viaje de la bebé. Planeamos hacer la Sorginen Bidea (la ruta de las brujas) por Euskadi. Pero el mejor regalo siempre será poder pasar tiempo con vosotros.</p>
+        
+        <h1>Long live the Sánchez family!</h1>
+        <p>If you insist on giving us a physical gift, please don't! ;-) Delia is a minimalist and Ginés already has many trinkets. We suggest you contribute to the baby's first trip. We plan to do the Sorginen Bidea (the witches' route) in the Basque Country. But the best gift will always be spending time with you.</p>
+        
+        <h1>Longue vie aux Sánchez!</h1>
+        <p>Si tu insistes pour nous offrir un cadeau physique, s’il te plaît ne le fais pas! ;-) Delia est minimaliste et Ginés a déjà beaucoup de babioles. Nous te proposons de participer au premier voyage du bébé. Nous prévoyons de faire la Sorginen Bidea (la route des sorcières) au Pays Basque. Mais le meilleur cadeau sera toujours de passer du temps avec vous.</p>
+        
+        <p data-en="Click the button below to contribute to our family trip fund:"
+           data-es="Haz clic en el botón de abajo para contribuir a nuestro fondo para el viaje familiar:"
+           data-fr="Cliquez sur le bouton ci-dessous pour contribuer à notre fonds pour le voyage en famille:"></p>
+           <a href="https://webapp.lyf.eu/pot/fr/4ca4cbde-c1c5-4d5c-8f2c-9d5d23436aa9" class="donate-button">Contribute</a>
+    </div>
+
+    <script>
+        function switchLanguage(lang) {
+            // Update the title
+            if (document.querySelector('title').hasAttribute(`data-${lang}`)) {
+                document.title = document.querySelector('title').getAttribute(`data-${lang}`);
+            }
+
+            // Update all elements with language-specific data attributes
+            document.querySelectorAll('[data-en], [data-es], [data-fr]').forEach(element => {
+                if (element.hasAttribute(`data-${lang}`)) {
+                    element.innerText = element.getAttribute(`data-${lang}`);
+                }
+            });
+
+            // For elements like your <p> tag with embedded HTML in data-* attributes
+            document.querySelectorAll('[data-' + lang + ']').forEach(element => {
+                element.innerHTML = element.getAttribute('data-' + lang); // Use innerHTML instead of innerText
+            });
+        }
+
+        // Initialize page with English language by default
+        document.addEventListener('DOMContentLoaded', function() {
+            switchLanguage('en');
+        });
+    </script>
+</body>
+</html>
