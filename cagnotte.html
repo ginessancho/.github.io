@@ -39,7 +39,7 @@
             font-size: 1.1em;
         }
         .option-details {
-            visibility: hidden;
+            display: none;
             width: 300px;
             background-color: white;
             color: #333;
@@ -53,8 +53,8 @@
             margin-left: -150px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
-        .option:hover .option-details {
-            visibility: visible;
+        .option.active .option-details {
+            display: block;
         }
         .donate-button {
             display: inline-block;
@@ -98,26 +98,23 @@
     </div>
 
     <div class="container">
-        <div class="container">
-            <div class="lang" data-lang="es">
-                <h1>¡Larga vida a los Sánchez!</h1>
-                <p>El mejor regalo siempre es pasar tiempo con vosotros.</p>
-                <p>Si insistes en regalarnos algo, te proponemos contribuir a nuestro primer viaje con la bebé. Planeamos hacer la Sorginen Bidea (la ruta de las brujas) por Euskadi.</p>
-            </div>
-        
-            <div class="lang" data-lang="en">
-                <h1>Long live the Sánchez family!</h1>
-                <p>The best gift will always be spending time with you!</p>
-                <p>If you insist on giving us a gift, we propose that you contribute to the baby's first trip instead. We plan to do the Sorginen Bidea (the witches' route) in the Basque Country.</p>
-            </div>
-        
-            <div class="lang" data-lang="fr">
-                <h1>Longue vie aux Sánchez!</h1>
-                <p>Le meilleur cadeau s'est toujours de passer du temps avec vous.</p>
-                <p>Si tu insistes pour nous offrir un cadeau, nous te proposons plutôt de contribuer au premier voyage du bébé. Nous prévoyons de faire la Sorginen Bidea (la route des sorcières) au Pays Basque.</p>
-            </div>
+        <div class="lang" data-lang="es">
+            <h1>¡Larga vida a los Sánchez!</h1>
+            <p>El mejor regalo siempre es pasar tiempo con vosotros.</p>
+            <p>Si insistes en regalarnos algo, te proponemos contribuir a nuestro primer viaje con la bebé. Planeamos hacer la Sorginen Bidea (la ruta de las brujas) por Euskadi.</p>
         </div>
-        
+    
+        <div class="lang" data-lang="en">
+            <h1>Long live the Sánchez family!</h1>
+            <p>The best gift will always be spending time with you!</p>
+            <p>If you insist on giving us a gift, we propose that you contribute to the baby's first trip instead. We plan to do the Sorginen Bidea (the witches' route) in the Basque Country.</p>
+        </div>
+    
+        <div class="lang" data-lang="fr">
+            <h1>Longue vie aux Sánchez!</h1>
+            <p>Le meilleur cadeau s'est toujours de passer du temps avec vous.</p>
+            <p>Si tu insistes pour nous offrir un cadeau, nous te proposons plutôt de contribuer au premier voyage du bébé. Nous prévoyons de faire la Sorginen Bidea (la route des sorcières) au Pays Basque.</p>
+        </div>
 
         <div class="image-container">
             <img src="photos/xareta_jpg__816579.jpg" alt="Sorginen Bidea, Basque Country">
@@ -128,15 +125,15 @@
            data-fr="Cliquez sur les options ci-dessous pour révéler les détails de la contribution à notre fonds pour le voyage en famille:"></p>
         
         <div class="contribution-options">
-            <div class="option">Europa: IBAN
+            <div class="option" onclick="toggleDetails(this)">Europa: IBAN
                 <div class="option-details">FR76 2823 3000 0151 4508 4022 170<br>Account Name: Ginés & Delia Sánchez</div>
             </div>
             <div></div>
-            <div class="option">Panamá: Banco General
+            <div class="option" onclick="toggleDetails(this)">Panamá: Banco General
                 <div class="option-details">Ahorros 04-04-01-003522-6<br> Nombre: Ginés Alberto Sánchez Arias</div>
             </div>
             <div></div>
-            <div class="option">Rest of the World: Wise
+            <div class="option" onclick="toggleDetails(this)">Rest of the World: Wise
                 <div class="option-details">@giness6</div>
             </div>
         </div>
@@ -170,6 +167,11 @@
             document.querySelectorAll('[data-' + lang + ']').forEach(element => {
                 element.innerHTML = element.getAttribute('data-' + lang); // Use innerHTML instead of innerText
             });
+        }
+
+        function toggleDetails(element) {
+            // Toggle the 'active' class to show/hide details
+            element.classList.toggle('active');
         }
 
         // Initialize page with English language by default
